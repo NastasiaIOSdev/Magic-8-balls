@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_balls" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_app5" translatesAutoresizingMaskIntoConstraints="NO" id="fU7-ab-phw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-PL-n2q">
+                                <rect key="frame" x="48" y="215" width="318" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="XY5-yF-1sn">
+                                <rect key="frame" x="40.5" y="431" width="333" height="207"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="9eR-GE-nGU">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="118"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="118" id="u3Y-YW-Pgx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4C-Dp-gdS">
+                                        <rect key="frame" x="124.5" y="157" width="84" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="QHv-n2-YYX"/>
+                                            <constraint firstAttribute="height" constant="50" id="eW3-az-t97"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Ask">
+                                            <color key="titleColor" red="0.20392156862745098" green="0.34901960784313724" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="askButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E1R-40-U9X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fU7-ab-phw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FlQ-mi-LDr"/>
+                            <constraint firstItem="fU7-ab-phw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5t-pP-7yu"/>
+                            <constraint firstItem="xIx-PL-n2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="171" id="VWZ-zl-8u3"/>
+                            <constraint firstItem="fU7-ab-phw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d3w-SQ-eku"/>
+                            <constraint firstItem="fU7-ab-phw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fBj-1D-ubR"/>
+                            <constraint firstItem="XY5-yF-1sn" firstAttribute="centerX" secondItem="xIx-PL-n2q" secondAttribute="centerX" id="peL-TD-mCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XY5-yF-1sn" secondAttribute="bottom" constant="224" id="uqd-nV-I8d"/>
+                            <constraint firstItem="XY5-yF-1sn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vQx-Iq-Au2"/>
+                            <constraint firstAttribute="bottom" secondItem="fU7-ab-phw" secondAttribute="bottom" id="xUw-q5-fBE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="9eR-GE-nGU" id="vet-RT-iCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background_app5" width="341" height="341"/>
+        <image name="ball" width="333" height="333"/>
+    </resources>
 </document>
